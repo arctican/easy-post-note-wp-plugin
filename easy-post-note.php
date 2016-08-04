@@ -41,13 +41,25 @@
 	*/
 	function epn_add_meta_box()
 	{
-		// Add meta box to the admin panel
-		add_meta_box( 	'epn-meta-box-id', 		// CSS ID of meta box
-						'Note', 				// Title displayed in meta box
-						'epn_render_meta_box', 	// Callback function for displaying (rendering) meta box
-						'post', 				// Post or page type to display on
-						'normal', 				// Where to place the meta box
-						'high' );				// Priority (for order)
+
+
+		$postTypes = get_post_types( ['public' => true], 'objects' );
+
+		foreach ( $postTypes as $postType )
+		{
+			$postTypeInternalName = $postType->name;
+
+			// Add meta box to the admin panel
+			if (get_option("epn-show-$postTypeInternalName"))
+				add_meta_box( 	'epn-meta-box-id', 		// CSS ID of meta box
+								'Note', 				// Title displayed in meta box
+								'epn_render_meta_box', 	// Callback function for displaying (rendering) meta box
+								$postTypeInternalName, 	// Post or page type to display on
+								'normal', 				// Where to place the meta box
+								'high' );				// Priority (for order)
+		}
+
+
 	}
 	add_action( 'add_meta_boxes', 'epn_add_meta_box' );
 

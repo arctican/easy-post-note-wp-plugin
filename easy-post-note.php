@@ -4,7 +4,7 @@
     Plugin URI: http://arcticanaudio.com
     Description: Lets you add a note to a post.
     Author: arcticanaudio
-    Version: 1.2
+    Version: 1.3.0
     Author URI: http://arcticanaudio.com
     */
 

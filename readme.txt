@@ -3,7 +3,7 @@ Contributors: arcticanaudio
 Tags: note, post
 Requires at least: 2.8.0
 Tested up to: 4.5.3
-Stable tag: 1.4.0
+Stable tag: 1.4.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -49,6 +49,16 @@ To stop malicious code being added to your database.
 
 
 == Changelog ==
+
+= 1.4.1 =
+* Fixed SVN trunk bug
+
+= 1.4.0 =
+* Added ability to add to custom post types
+* Can turn off/on for different post types
+
+= 1.3.0 =
+* Updated to latest WordPress
 
 = 1.2 =
 * Added column in post list showing if post has note

@@ -4,7 +4,7 @@
     Plugin URI: https://wordpress.org/plugins/easy-post-note/
     Description: Lets you add a note to a post.
     Author: arcticanaudio
-    Version: 1.4.0
+    Version: 1.4.1
     Author URI: http://arcticanaudio.com
     */
 

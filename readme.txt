@@ -1,7 +1,7 @@
 === Easy Post Note ===
 Contributors: arcticanaudio
 Tags: note, post
-Requires at least: 2.8.0
+Requires at least: 3.1.0
 Tested up to: 4.5.3
 Stable tag: 1.4.1
 License: GPLv2 or later

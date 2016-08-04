@@ -1,6 +1,18 @@
 <?php
 
 
+function epn_register_settings()
+{
+	$groupSettingName = "epn-settings-group";
+	$postTypes = get_post_types( ['public' => true], 'objects' );
+	foreach ( $postTypes as $postType )
+	{
+		$postTypeInternalName = $postType->name;
+		register_setting($groupSettingName, "epn-show-$postTypeInternalName");
+	}
+
+}
+add_action('admin_init', 'epn_register_settings');
 
 
 function epn_add_settings_menu()
@@ -18,19 +30,37 @@ function epn_show_settings_window()
 
 
 		<h2 class="title">Show on post types</h2>
-		<?php
+
+		<form method="post" action="options.php">
+			<?php
+			settings_fields( 'epn-settings-group' );
+			do_settings_sections( 'epn-settings-group' );
 			$postTypes = get_post_types( ['public' => true], 'objects' );
 
 			foreach ( $postTypes as $postType )
 			{
 				$postTypeName = $postType->labels->name;
 				$postTypeInternalName = $postType->name;
+				?>
 
-				echo "<label for='epn-show-$postTypeInternalName'>";
-				echo "<input name='epn-show-$postTypeInternalName' type='checkbox' id='default_pingback_flag' value='1' checked='checked'>$postTypeName</label><br>";
+				<label for='epn-show-<?=$postTypeInternalName?>'>
+					<input 	name='epn-show-<?=$postTypeInternalName?>'
+					type='checkbox'
+					id='default_pingback_flag'
+					value='1'
+					<?=checked( 1, get_option( "epn-show-$postTypeInternalName", false ))?> >
+					<?=$postTypeName?>
+				</label>
+				<br>
+
+				<?php
 			}
 
-		?>
+			submit_button(); ?>
+		</form>
+
+
+
 
 	</div>
 
@@ -42,30 +72,4 @@ function epn_show_settings_window()
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	?>
+?>

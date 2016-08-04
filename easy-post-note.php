@@ -1,10 +1,10 @@
 <?php
     /*
     Plugin Name: Easy Post Note
-    Plugin URI: http://arcticanaudio.com
+    Plugin URI: https://wordpress.org/plugins/easy-post-note/
     Description: Lets you add a note to a post.
     Author: arcticanaudio
-    Version: 1.3.0
+    Version: 1.4.0
     Author URI: http://arcticanaudio.com
     */
 

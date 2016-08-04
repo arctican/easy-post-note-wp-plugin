@@ -3,7 +3,7 @@ Contributors: arcticanaudio
 Tags: note, post
 Requires at least: 2.8.0
 Tested up to: 4.5.3
-Stable tag: 1.3.0
+Stable tag: 1.4.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
